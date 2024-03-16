@@ -35,20 +35,6 @@ contract votes{
         require(flag==0,"Voter has already voted");
         _;
     } 
-    
-    function vote(uint Candidate_Number) external check(Candidate_Number) voter(msg.sender){
-        voters.push(msg.sender);
-        uint _s=Candidate_Number;
-        if(_s==1)
-        Candidate_1+=1;
-        else if(_s==2)
-        Candidate_2+=1;
-        else if(_s==3)
-        Candidate_3+=1;
-        else 
-        Candidate_4+=1;
-
-    }
 
     function vote_count(uint Candidate_Number) external view check(Candidate_Number) returns(uint){
        // return(Candidate_1,Candidate_2,Candidate_3,Candidate_4);
